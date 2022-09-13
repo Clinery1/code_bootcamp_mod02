@@ -10,25 +10,38 @@
             (content "width=device-width,initial-scale=1")))
     (body
         ((nav
-    (class nav))
+            (class nav))
             (h1 "Chris Nguyen's Portfolio")
             (spacer)
-            ((a
-    (href "https://github.com/Clinery1"))
-                (h1 "Github"))
-            ((a
-    (href "https://clinery1.github.com"))
-                (h1 "Website")))
-        ((div
-    (id nav_content_spacer)))
+            (nav_items
+                ((a
+                    (href "https://github.com/Clinery1"))
+                    (h2 "Github"))
+                ((a
+                    (href "https://clinery1.github.io"))
+                    (h2 "Website"))))
+        (// "This is sooo cheating, but it works! Either way, it'll be fine for now till I learn a better solution.")
+        ((nav
+            (class fake_nav))
+            (h1 "Chris Nguyen's Portfolio")
+            (spacer)
+            (nav_items
+                ((a
+                    (href "https://github.com/Clinery1"))
+                    (h2 "Github"))
+                ((a
+                    (href "https://clinery1.github.io"))
+                    (h2 "Website"))))
         ((h2
-    (class h_center)) "Projects")
+            (class h_center)) "Projects")
         ((article
-    (id main_content))
+            (id main_content))
             (section
-                (!img
-                    (class background)
-                    (src "./assets/structural_editor.png"))
+                ((a
+                    (href "https://github.com/Clinery1/structural_s_expression_editor")
+                    (class background))
+                    (!img
+                        (src "./assets/structural_editor.png")))
                 (content
                     (h3 "Structural Editor")
                     (p
@@ -39,11 +52,41 @@
                         (code "sedit")
                         "command to edit HTSX files (another project of mine) for this assignment.")))
             (section
-                (!img
-                    (class background)
-                    (src "./assets/htsx.png"))
+                ((a
+                    (href "https://github.com/Clinery1/htsx")
+                    (class background))
+                    (!img
+                        (class background)
+                        (src "./assets/htsx.png")))
                 (content
                     (h3 "HTSX language")
                     (p
                         "The HTSX language is basically HTML, but it instead uses s-expressions to represent the HTML tags."
-                        "Since it almost a 1:1 replica of HTML, it is a simple conversion from s-expressions to HTML"))))))
+                        "Since it almost a 1:1 replica of HTML, it is a simple conversion from s-expressions to HTML")))
+            (section
+                ((a
+                    (href "https://github.com/Clinery1/docbuilder")
+                    (class background))
+                    (!img
+                        (src "./assets/docbuilder.png")))
+                ((content
+                    (id dark_shade))
+                    (h3 "Docbuilder")
+                    ((p
+                        (id docbuilder_text))
+                        "This project was built entirely so I could build myself a good looking Resume without using anything microsoft."
+                        "Due to the simplicity of the language, it has a lot of issues and so is getting a rewrite as an s-expression-based language like HTSX.")))
+            (section
+                ((a
+                    (href "https://github.com/Clinery1/dotfiles")
+                    (class background))
+                    (!img
+                        (src "./assets/dotfiles.png")))
+                ((content
+                    (id dark_shade))
+                    (h3 "Dotfiles")
+                    ((p
+                        (id docbuilder_text))
+                        "Dotfiles are an essential part of one's configuration, so it is always a good idea to not only back them up and log changes, but to share them so others can take inspiration."
+                        "Without other people's dotfiles mine would never be the way they are now, and I wouldn't be able to do the things I can today."
+                        "Although it may seem useless to track changes to configuration files, tracking the changes makes it trivial to revert a change that broke something, or if you deleted something that you didn't want to."))))))

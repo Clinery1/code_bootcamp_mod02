@@ -1,3 +1,4 @@
+/* Reset all elements to a known default */
 * {
    padding:0;
    margin:0;
@@ -18,23 +19,35 @@ h2 {
 h3 {
     font-size:160%;
 }
-nav {
+nav.nav, nav.fake_nav {
     position:fixed;
     display:flex;
     background-color:#555;
-    height:80px;
     width:100%;
+    z-index:1000;
 }
-nav * {
+nav.nav nav_items, nav.fake_nav nav_items {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+}
+nav.nav nav_items *, nav.fake_nav nav_items * {
+    margin:5px;
+}
+nav.nav *, nav.fake_nav * {
     margin:10px;
     margin-top:auto;
     margin-bottom:auto;
 }
-nav spacer {
+nav.nav spacer, nav.fake_nav spacer {
     flex:1;
 }
-nav a {
+nav.nav a, nav.fake_nav a {
     color:#aaf;
+}
+nav.fake_nav {
+    position:unset;
+    margin-bottom:2vh;
+    opacity:0;
 }
 article#main_content {
     display:grid;
@@ -49,16 +62,15 @@ article#main_content section {
     margin:5px;
 }
 article#main_content section content {
-    margin:10px;
+    padding:10px;
     display:flex;
     flex-direction:column;
-    justify-content:flex-beginning;
+    z-index:10;
 }
 article#main_content section content * {
     margin:10px;
-    z-index:10;
 }
-article#main_content section .background {
+article#main_content section .background img {
     filter:blur(5px);
     width:100%;
     z-index:5;
@@ -70,25 +82,16 @@ article#main_content section .background, article#main_content section content {
 article#main_content section:hover content {
     display:none;
 }
-article#main_content section:hover .background {
+article#main_content section:hover .background img {
     filter:blur(0px);
 }
-
-
-@media screen and (max-width:960px) {
-    article#main_content {
-        grid-template-columns: 1fr;
-    }
-    article#main_content section {
-        margin-left:auto;
-        margin-right:auto;
-    }
+content#dark_shade {
+    background-color:#000000a0;
 }
 
 
-#nav_content_spacer {
-    height:80px;
-    width:100%;
+#docbuilder_text {
+    color:linear-gradient(#fff 0%,#fff 49%,#000 51%,#000 100%);
 }
 
 
@@ -101,4 +104,22 @@ article#main_content section:hover .background {
     margin-top:auto;
     margin-bottom:auto;
     height:min-content;
+}
+
+
+/*  Since this project only has 4 cards, it looks better as a 2x2, so we are leaving this off for now.
+@media screen and (min-width:1500px) {
+    article#main_content {
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+*/
+@media screen and (max-width:960px) {
+    article#main_content {
+        grid-template-columns: 1fr;
+    }
+    nav.nav nav_items, nav.fake_nav nav_items {
+        grid-template-columns:1fr;
+        grid-template-rows: 1fr 1fr;
+    }
 }
