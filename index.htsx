@@ -4,6 +4,46 @@
         (title "Chris Nguyen's portfolio")
         (!link
             (rel stylesheet)
-            (href "./assets/index.css")))
+            (href "./assets/index.css"))
+        (!meta
+            (name viewport)
+            (content "width=device-width,initial-scale=1")))
     (body
-        (h1 "My portfolio")))
+        ((nav
+    (class nav))
+            (h1 "Chris Nguyen's Portfolio")
+            (spacer)
+            ((a
+    (href "https://github.com/Clinery1"))
+                (h1 "Github"))
+            ((a
+    (href "https://clinery1.github.com"))
+                (h1 "Website")))
+        ((div
+    (id nav_content_spacer)))
+        ((h2
+    (class h_center)) "Projects")
+        ((article
+    (id main_content))
+            (section
+                (!img
+                    (class background)
+                    (src "./assets/structural_editor.png"))
+                (content
+                    (h3 "Structural Editor")
+                    (p
+                        "The purpose of this editor is to edit s-expressions."
+                        "It uses structural editing to edit the content of the s-expressions and display them in an easy-to-read format."
+                        "Since this is made to edit s-expressions, it uses simple text files as input and output, but it formats the files upon output for readability."
+                        "I am using the editor (aliased to the"
+                        (code "sedit")
+                        "command to edit HTSX files (another project of mine) for this assignment.")))
+            (section
+                (!img
+                    (class background)
+                    (src "./assets/htsx.png"))
+                (content
+                    (h3 "HTSX language")
+                    (p
+                        "The HTSX language is basically HTML, but it instead uses s-expressions to represent the HTML tags."
+                        "Since it almost a 1:1 replica of HTML, it is a simple conversion from s-expressions to HTML"))))))
