@@ -100,4 +100,15 @@
                     (h3 "TVARA")
                     (p
                         "TVARA is an application made by Christian, Matthew, Alex, and I. It tracks the ingredients you have in your pantry and allows you to search recipes. It also allows you to update your pantry with the press of a button after cooking a recipe."
-                        "TVARA also includes a save feature that allows you to save favorited recipes in your browser for easy retrieval later."))))))
+                        "TVARA also includes a save feature that allows you to save favorited recipes in your browser for easy retrieval later.")))
+            (section
+                ((a
+                    (href "https://github.com/Clinery1/non_profit")
+                    (class background))
+                    (!img
+                        (src "./assets/foundation_finder.png")))
+                ((content
+                    (id dark_shade))
+                    (h3 "Foundation Finder")
+                    (p
+                        "Foundation Finder is an application made my Kara, Matthew, and I. The application is designed to show different non-profit organizations so you can donate to them."))))))
